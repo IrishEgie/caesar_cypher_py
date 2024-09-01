@@ -23,3 +23,4 @@ def encrypt(message, shift):
     print(f"Encrypted Text: {enc_text}")
     print("==================================")
         
+encrypt("zebra",4)
