@@ -1,6 +1,7 @@
-import encrypt as en
+import encrypt as enc
+import decrypt as dec
 
-#direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
 text = input("Type your message:\n").lower()
 print("----------------------------------")
 shift = int(input("Type the shift number:\n"))
@@ -8,9 +9,12 @@ print("----------------------------------")
 
 
 # TODO-1: Create a function called 'encrypt()' that takes 'original_text' and 'shift_amount' as 2 inputs.
-en.encrypt(text, shift)
-
-
+if direction == 'encode':
+    enc.encrypt(text, shift)
+elif direction == 'decode':
+    dec.decrypt(text, shift)
+else: 
+    print("Oops ... Unrecognized choice! Please type either 'encrypt' or 'decode' next")
 # TODO-2: Inside the 'encrypt()' function, shift each letter of the 'original_text' forwards in the alphabet
 #  by the shift amount and print the encrypted text.
 
